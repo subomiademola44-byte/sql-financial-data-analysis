@@ -3,7 +3,7 @@
 **Status:** 🟡 In Progress
 
 ## Goal
-Use SQL to analyse a financial dataset and answer practical business questions, such as spending by category, monthly totals and top-performing items.
+This project uses SQL to analyse financial transaction data and answer practical business questions. The aim is to develop my SQL skills and demonstrate how data can support financial reporting and decision-making.
 
 ## Skills demonstrated (as the project progresses)
 - Writing SQL queries: SELECT, WHERE, ORDER BY
@@ -18,9 +18,21 @@ Use SQL to analyse a financial dataset and answer practical business questions, 
 - [ ] Write queries answering 5 to 10 business questions
 - [ ] Save all queries in a `queries/` folder with comments
 - [ ] Write a short summary of findings
+- [ ] Maintain a project progress log
 
 ## Tools
-SQL (database to be confirmed), GitHub
+- MySQL 8
+- MYSQL Workbeanch
+- GitHub
 
+## Repository Structure
+
+```text
+sql-financial-data-analysis/
+├── README.md
+└── sql/
+    └── transactions_analysis.sql
+```
 ## Progress log
-- Oct 2026: Repository created and project planned. Currently learning SQL fundamentals.
+- Oct 2026: Repository created and project planned.
+- Current Focus : Practising SQL fundamentals, Including filtering, sorting, aggregation and grouping
