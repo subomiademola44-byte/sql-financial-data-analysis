@@ -71,6 +71,12 @@ sql-financial-data-analysis/
 ### Transaction report by department and type
 ![Transaction report](screenshots/q16_transaction_report.png)
 
+### Transactions by category
+![Transactions by category](screenshots/q17_category_counts.png)
+
+### Transactions by status
+![Transactions by status](screenshots/status_counts.png)
+
 ## Findings
 - Sales is the largest department by total transaction amount at 20,400, just over half of the 40,750 total across all 30 transactions.
 - IT has the highest expenses at 7,100, followed by Marketing (5,450), Finance (5,400) and HR (2,400).
