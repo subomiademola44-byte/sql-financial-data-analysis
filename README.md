@@ -18,7 +18,7 @@ This project uses SQL to analyse financial transaction data and answer practical
 - [X] Write queries answering 5 to 10 business questions
 - [X] Save all queries in a `queries/` folder with comments
 - [X] Write a short summary of findings
-- [ ] Maintain a project progress log
+- [X] Maintain a project progress log
 
 ## Tools
 - MySQL 8
