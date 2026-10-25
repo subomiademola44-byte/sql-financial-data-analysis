@@ -14,7 +14,7 @@ This project uses SQL to analyse financial transaction data and answer practical
 
 ## Planned deliverables
 - [X] Choose and document the dataset (source and description)
-- [ ] Set up the database and load the data
+- [X] Set up the database and load the data
 - [X] Write queries answering 5 to 10 business questions
 - [X] Save all queries in a `queries/` folder with comments
 - [ ] Write a short summary of findings
