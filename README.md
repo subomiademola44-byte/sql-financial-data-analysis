@@ -40,25 +40,29 @@ sql-financial-data-analysis/
 ## Sample Results
 
 ## Dataset
-- **Source:** [Sample data I created for practice / name of public source and link]
+- - **Source:** Sample data for SQL practice. The transactions table was created by me; the companies table was generated with AI assistance. Neither contains real company data.
 - **Database:** finance_practice
-- **Tables:** transactions ([number] rows), companies ([number] rows)
+- **Tables:** transactions (30 rows), companies (7 rows)
 
 ### transactions columns
-| Column | Description |
-|---|---|
-| transaction_id | Unique ID for each transaction |
-| transaction_date | Date the transaction happened |
-| amount | Transaction value |
-| transaction_type | Expense or Revenue |
-| department | Department the transaction belongs to |
-| status | Transaction status, e.g. Pending |
+| Column | Type | Description |
+|---|---|---|
+| transaction_id | int (primary key) | Unique ID for each transaction |
+| department | varchar(30) | Department the transaction belongs to |
+| transaction_type | varchar(20) | Type of transaction, e.g. Expense or Revenue |
+| amount | decimal(10,2) | Transaction value |
+| transaction_date | date | Date the transaction happened |
+| payment_method | varchar(20) | How the transaction was paid |
+| status | varchar(20) | Transaction status, e.g. Pending |
 
 ### companies columns
-| Column | Description |
-|---|---|
-| company_name | Name of the company |
-| sector | Sector the company operates in |
+| Column | Type | Description |
+|---|---|---|
+| company_id | int (primary key, auto-increment) | Unique ID for each company |
+| company_name | varchar(100) | Name of the company |
+| ticker_symbol | varchar(10) | Stock ticker symbol of the company |
+| sector | varchar(50) | Sector the company operates in |
+| country | varchar(50) | Country the company is based in |
 
 ### Total amount by department
 ![Total by department](screenshots/q10_total_by_department.png)
