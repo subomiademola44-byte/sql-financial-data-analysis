@@ -1,6 +1,6 @@
-# SQL Financial Data Analysis
+# SQL Financial Data Analysis 
 
-**Status:** 🟡 In Progress
+**Status:** 🟢 completed
 
 ## Goal
 This project uses SQL to analyse financial transaction data and answer practical business questions. The aim is to develop my SQL skills and demonstrate how data can support financial reporting and decision-making.
@@ -17,7 +17,7 @@ This project uses SQL to analyse financial transaction data and answer practical
 - [X] Set up the database and load the data
 - [X] Write queries answering 5 to 10 business questions
 - [X] Save all queries in a `queries/` folder with comments
-- [ ] Write a short summary of findings
+- [X] Write a short summary of findings
 - [ ] Maintain a project progress log
 
 ## Tools
@@ -36,6 +36,7 @@ sql-financial-data-analysis/
 ## Progress log
 - Oct 2026: Repository created and project planned.
 - Current Focus : Practising SQL fundamentals, Including filtering, sorting, aggregation and grouping
+- Oct 2026: Documented the dataset, added findings, project completed.
 
 ## Sample Results
 
@@ -69,3 +70,11 @@ sql-financial-data-analysis/
 
 ### Transaction report by department and type
 ![Transaction report](screenshots/q16_transaction_report.png)
+
+## Findings
+- Sales is the largest department by total transaction amount at 20,400, just over half of the 40,750 total across all 30 transactions.
+- IT has the highest expenses at 7,100, followed by Marketing (5,450), Finance (5,400) and HR (2,400).
+- Sales has no Expense transactions, so the expense analysis covers the other four departments only.
+- Four of the five departments have a total above 5,000. HR is the only one below, at 2,400.
+- Most transactions are mid-sized: 22 of 30 (73%) are Medium (500 to 1,999), 6 (20%) are Large (2,000 or more) and only 2 (7%) are Small (under 500).
+- 25 of the 30 transactions are Completed and 5 (about 17%) are still Pending.
