@@ -43,3 +43,8 @@ SQL project using MySQL to clean, validate and analyse financial data across two
 - `02_data_quality_checks.sql`
 - `03_company_analysis.sql`
 - `04_transaction_analysis.sql`
+
+## Repository structure
+- `queries/` - initial SQL practice queries (filtering, aggregation, GROUP BY, HAVING, CASE)
+- `screenshots/` - screenshots from the earlier practice stage
+- `01` to `04` .sql files - the full financial analysis project
