@@ -1,86 +1,45 @@
-# SQL Financial Data Analysis 
+# SQL Financial Data Analysis
 
-**Status:** 🟢 completed
+SQL project using MySQL to clean, validate and analyse financial data across two datasets: published annual results for large public companies, and an internal transactions ledger.
 
-## Goal
-This project uses SQL to analyse financial transaction data and answer practical business questions. The aim is to develop my SQL skills and demonstrate how data can support financial reporting and decision-making.
+## Datasets
 
-## Skills demonstrated (as the project progresses)
-- Writing SQL queries: SELECT, WHERE, ORDER BY
-- Aggregation with GROUP BY, SUM, COUNT and AVG
-- Joining tables
-- Cleaning and checking data
-- Summarising findings clearly for a non-technical reader
+**1. `financials` + `companies`** - annual revenue and net income for Apple, Microsoft and Amazon (3 fiscal years each), joined to a company reference table.
+- Figures are in USD millions, taken from company annual reports and filings.
+- Fiscal year-ends differ: Apple (September), Microsoft (June), Amazon (December).
+- The `companies` table also lists JPMorgan, Tesla, Unilever and HSBC. These have no financial data loaded yet.
 
-## Planned deliverables
-- [X] Choose and document the dataset (source and description)
-- [X] Set up the database and load the data
-- [X] Write queries answering 5 to 10 business questions
-- [X] Save all queries in a `queries/` folder with comments
-- [X] Write a short summary of findings
-- [X] Maintain a project progress log
+**2. `transactions`** - 30 practice transactions across 5 departments (Sales, Finance, IT, Marketing, HR). This is a sample dataset created for learning, not real company data.
 
-## Tools
-- MySQL 8
-- MYSQL Workbeanch
-- GitHub
+## Data quality checks (transactions)
+- Missing values in any column: **0 found**
+- Zero or negative amounts: **0 found**
+- Possible duplicates (same department, amount, date): **0 found**
+- Category columns checked with `DISTINCT`: department, transaction type and status contain no spelling variants.
 
-## Repository Structure
+## Key findings
 
-```text
-sql-financial-data-analysis/
-├── README.md
-└── sql/
-    └── transactions_analysis.sql
-```
-## Progress log
-- Oct 2026: Repository created and project planned.
-- Current Focus : Practising SQL fundamentals, Including filtering, sorting, aggregation and grouping
-- Oct 2026: Documented the dataset, added findings, project completed.
+**Company financials (FY2023-FY2025)**
+- Amazon had the highest total revenue ($1.93tn) but the lowest net margin (8.67%).
+- Microsoft had the highest net margin (35.51%) and the fastest growth (about 15-16% a year).
+- Apple's margin was 25.43%. Growth slowed to 2.02% in FY2024, then recovered to 6.43% in FY2025.
 
-## Sample Results
+**Transactions**
+- Completed transactions: 18,600 revenue vs 16,600 expenses, a net position of +2,000.
+- Sales is the only department with revenue. IT has the highest spend (5,300).
+- 5 of 30 transactions (5,550 of 40,750 in value) are Pending and were excluded from the totals.
+- Totals reconcile: completed (35,200) + pending (5,550) = all transactions (40,750).
 
-## Dataset
-- - **Source:** Sample data for SQL practice. The transactions table was created by me; the companies table was generated with AI assistance. Neither contains real company data.
-- **Database:** finance_practice
-- **Tables:** transactions (30 rows), companies (7 rows)
+## SQL skills used
+`SELECT`, `WHERE`, `ORDER BY`, `GROUP BY`, `HAVING`, aggregate functions (`SUM`, `AVG`, `COUNT`), `INNER JOIN`, `PRIMARY KEY` / `FOREIGN KEY`, `CASE WHEN`, `UNION ALL`, subqueries, window functions (`LAG`).
 
-### transactions columns
-| Column | Type | Description |
-|---|---|---|
-| transaction_id | int (primary key) | Unique ID for each transaction |
-| department | varchar(30) | Department the transaction belongs to |
-| transaction_type | varchar(20) | Type of transaction, e.g. Expense or Revenue |
-| amount | decimal(10,2) | Transaction value |
-| transaction_date | date | Date the transaction happened |
-| payment_method | varchar(20) | How the transaction was paid |
-| status | varchar(20) | Transaction status, e.g. Pending |
+## Limitations
+- Only 3 companies and 3 years of data, so findings are illustrative, not conclusive.
+- Net margin compares companies with different fiscal year-ends and business models.
+- Transactions data is sample data.
 
-### companies columns
-| Column | Type | Description |
-|---|---|---|
-| company_id | int (primary key, auto-increment) | Unique ID for each company |
-| company_name | varchar(100) | Name of the company |
-| ticker_symbol | varchar(10) | Stock ticker symbol of the company |
-| sector | varchar(50) | Sector the company operates in |
-| country | varchar(50) | Country the company is based in |
-
-### Total amount by department
-![Total by department](screenshots/q10_total_by_department.png)
-
-### Transaction report by department and type
-![Transaction report](screenshots/q16_transaction_report.png)
-
-### Transactions by category
-![Transactions by category](screenshots/q17_category_counts.png)
-
-### Transactions by status
-![Transactions by status](screenshots/status_counts.png)
-
-## Findings
-- Sales is the largest department by total transaction amount at 20,400, just over half of the 40,750 total across all 30 transactions.
-- IT has the highest expenses at 7,100, followed by Marketing (5,450), Finance (5,400) and HR (2,400).
-- Sales has no Expense transactions, so the expense analysis covers the other four departments only.
-- Four of the five departments have a total above 5,000. HR is the only one below, at 2,400.
-- Most transactions are mid-sized: 22 of 30 (73%) are Medium (500 to 1,999), 6 (20%) are Large (2,000 or more) and only 2 (7%) are Small (under 500).
-- 25 of the 30 transactions are Completed and 5 (about 17%) are still Pending.
+## Files
+- `01_create_tables.sql`
+- `02_data_quality_checks.sql`
+- `03_company_analysis.sql`
+- `04_transaction_analysis.sql`
